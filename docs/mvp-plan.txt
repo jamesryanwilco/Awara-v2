@@ -1,0 +1,105 @@
+MVP Plan – Gamified Mindful Eating App
+🎯 Goal of MVP
+
+Validate whether users engage with and enjoy challenge-based mindful eating more than repetitive logging/scanning.
+
+-----------------
+Core Features (must-have)
+
+✅ Onboarding
+
+Short questionnaire: goals (weight, emotional eating, general health).
+
+Explain concept: “You’ll level up by completing mindful eating challenges.”
+
+✅ Daily/Weekly Challenge System
+
+Deliver one new bite-sized challenge at a time (auto-assigned).
+
+-----------------
+Examples:
+
+“Take one mindful breath before your next meal.”
+
+“Put down your fork once during dinner.”
+
+Clear instructions, simple success criteria.
+
+-----------------
+✅ Completion Feedback
+
+One-tap “Done” button after challenge.
+
+Instant reward: points/XP + short encouraging message.
+
+-----------------
+✅ Progress Tracking
+
+Level bar (e.g., “Level 1: Beginner Mindful Eater”).
+
+Streak counter for consecutive days of challenge completion.
+
+First Challenge Ladder (MVP content)
+Week 1: Awareness Basics
+
+Pause for 1 deep breath before eating.
+
+Put down your fork halfway through your meal.
+
+Eat the first 3 bites slowly.
+
+Rate hunger (1–5) before your meal.
+
+Notice your fullness at the end of your meal.
+
+Week 2: Presence & Control
+
+Eat one snack without distractions (no phone/TV).
+
+Chew each bite 10 times.
+
+Pause 30 seconds before responding to a craving.
+
+Drink a glass of water before snacking.
+
+End one meal with gratitude (say or think one thing).
+
+This gives you a 2-week ready-to-test path.
+
+-----------------
+Tech Stack (lean approach)
+
+Frontend: React Native (cross-platform).
+
+Backend/Database: Supabase (user accounts, challenge tracking).
+
+Hosting: Vercel 
+
+Expo - Development platform and tooling for React Native
+
+
+-----------------
+Success Metrics
+
+Activation: % of users who complete 1st challenge after onboarding.
+
+Engagement: Average daily challenge completions in first week.
+
+Retention: % of users still active after 7 and 14 days.
+
+Delight: Qualitative feedback (do users find it fun, helpful, too simple?).
+
+-----------------
+Rollout Strategy
+
+Closed beta (20–30 users): Friends, early testers.
+
+Gather feedback:
+
+Were challenges too easy/hard?
+
+Did the gamification feel motivating?
+
+Did they look forward to opening the app?
+
+Iterate challenge design + reward mechanics.
