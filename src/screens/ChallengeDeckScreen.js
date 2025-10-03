@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { challenges, DECKS } from '../data/challenges';
 import { COLORS, SIZES, FONTS } from '../styles/themes';
+import GradientBackground from '../components/GradientBackground';
 
 const ChallengeDeckScreen = ({ navigation }) => {
   const awarenessDeck = challenges[DECKS.AWARENESS_BASICS];
@@ -12,21 +13,23 @@ const ChallengeDeckScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Choose a Deck</Text>
-      <TouchableOpacity
-        style={styles.deck}
-        onPress={() => handleDeckPress(DECKS.AWARENESS_BASICS, awarenessDeck.title)}
-      >
-        <Text style={styles.deckTitle}>{awarenessDeck.title}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.deck}
-        onPress={() => handleDeckPress(DECKS.PRESENCE_CONTROL, presenceDeck.title)}
-      >
-        <Text style={styles.deckTitle}>{presenceDeck.title}</Text>
-      </TouchableOpacity>
-    </View>
+    <GradientBackground>
+      <View style={styles.container}>
+        <Text style={styles.title}>Choose a Deck</Text>
+        <TouchableOpacity
+          style={styles.deck}
+          onPress={() => handleDeckPress(DECKS.AWARENESS_BASICS, awarenessDeck.title)}
+        >
+          <Text style={styles.deckTitle}>{awarenessDeck.title}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.deck}
+          onPress={() => handleDeckPress(DECKS.PRESENCE_CONTROL, presenceDeck.title)}
+        >
+          <Text style={styles.deckTitle}>{presenceDeck.title}</Text>
+        </TouchableOpacity>
+      </View>
+    </GradientBackground>
   );
 };
 
@@ -36,7 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: SIZES.padding,
-    backgroundColor: COLORS.background,
   },
   title: {
     ...FONTS.h1,
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
     marginBottom: SIZES.padding,
   },
   deck: {
-    backgroundColor: COLORS.card,
+    backgroundColor: COLORS.surface2,
     padding: SIZES.padding,
     borderRadius: SIZES.radius,
     marginBottom: SIZES.padding,
@@ -53,14 +55,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
     elevation: 5,
   },
   deckTitle: {
     ...FONTS.h2,
-    color: COLORS.textColor,
+    color: COLORS.text,
   },
 });
 

@@ -9,7 +9,7 @@ import { useUserProgress } from '../services/UserProgressContext';
 const difficultyColors = {
   easy: COLORS.success,
   medium: COLORS.warning,
-  hard: '#EF5350',
+  hard: COLORS.danger,
 };
 
 const FlippableCard = ({ challenge, deckId, cardIndex, totalCards }) => {
@@ -121,17 +121,17 @@ const styles = StyleSheet.create({
     position: 'absolute',
     height: '100%',
     width: '100%',
-    backgroundColor: COLORS.card,
+    backgroundColor: COLORS.surface2,
     borderRadius: SIZES.radius,
     padding: SIZES.padding,
     justifyContent: 'space-between',
     alignItems: 'center',
     backfaceVisibility: 'hidden',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 6,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
     borderWidth: 1,
     borderColor: COLORS.border,
   },

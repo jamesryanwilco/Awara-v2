@@ -9,7 +9,7 @@ import ChallengeDeckScreen from './screens/ChallengeDeckScreen';
 import ChallengeSwiperScreen from './screens/ChallengeSwiperScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { UserProgressProvider } from './services/UserProgressContext';
-import { COLORS } from './styles/themes';
+import { COLORS, FONTS } from './styles/themes';
 import { StatusBar } from 'expo-status-bar';
 
 const RootStack = createStackNavigator();
@@ -22,7 +22,7 @@ const AppDarkTheme = {
     ...DarkTheme.colors,
     primary: COLORS.primary,
     background: COLORS.background,
-    card: COLORS.card,
+    card: COLORS.surface2,
     text: COLORS.text,
     border: COLORS.border,
   },
@@ -30,18 +30,24 @@ const AppDarkTheme = {
 
 function DeckStackNavigator() {
   return (
-    <DeckStack.Navigator>
+    <DeckStack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: COLORS.surface2 },
+        headerTitleStyle: { ...FONTS.h2, color: COLORS.text },
+        headerTintColor: COLORS.primary,
+      }}
+    >
       <DeckStack.Screen
         name="ChallengeDeck"
         component={ChallengeDeckScreen}
-        options={{ title: 'Choose a Deck' }}
+        options={{ title: 'Choose a Deck', headerBackVisible: false }}
       />
       <DeckStack.Screen
         name="ChallengeSwiper"
         component={ChallengeSwiperScreen}
         options={({ route }) => ({
-          title: route.params.deckTitle,
-          headerBackTitle: 'Decks',
+          title: route.params?.deckTitle,
+          headerBackVisible: false,
         })}
       />
     </DeckStack.Navigator>
@@ -63,6 +69,14 @@ function MainAppTabs() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarInactiveTintColor: COLORS.textSecondary,
+        tabBarStyle: {
+          backgroundColor: COLORS.surface1,
+          borderTopColor: COLORS.border,
+        },
+        headerStyle: { backgroundColor: COLORS.surface2 },
+        headerTitleStyle: { ...FONTS.h2, color: COLORS.text },
       })}
     >
       <Tab.Screen

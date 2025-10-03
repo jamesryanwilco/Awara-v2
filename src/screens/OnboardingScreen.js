@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { COLORS, SIZES, FONTS } from '../styles/themes';
 import { useUserProgress } from '../services/UserProgressContext';
+import GradientBackground from '../components/GradientBackground';
 
 const GOALS = {
   WEIGHT: 'Weight Management',
@@ -23,36 +24,38 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Awara</Text>
-      <Text style={styles.subtitle}>What's your primary goal?</Text>
+    <GradientBackground>
+      <View style={styles.container}>
+        <Text style={styles.title}>Welcome to Awara</Text>
+        <Text style={styles.subtitle}>What's your primary goal?</Text>
 
-      <View style={styles.optionsContainer}>
-        {Object.values(GOALS).map((goal) => (
-          <TouchableOpacity
-            key={goal}
-            style={[
-              styles.optionButton,
-              selectedGoal === goal && styles.selectedOption,
-            ]}
-            onPress={() => setSelectedGoal(goal)}
-          >
-            <Text style={styles.optionText}>{goal}</Text>
-          </TouchableOpacity>
-        ))}
+        <View style={styles.optionsContainer}>
+          {Object.values(GOALS).map((goal) => (
+            <TouchableOpacity
+              key={goal}
+              style={[
+                styles.optionButton,
+                selectedGoal === goal && styles.selectedOption,
+              ]}
+              onPress={() => setSelectedGoal(goal)}
+            >
+              <Text style={styles.optionText}>{goal}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <Text style={styles.explanation}>
+          You’ll level up by choosing and completing mindful eating challenges from different card decks.
+        </Text>
+
+        <TouchableOpacity
+          style={styles.continueButton}
+          onPress={handleContinue}
+        >
+          <Text style={styles.continueButtonText}>Continue</Text>
+        </TouchableOpacity>
       </View>
-
-      <Text style={styles.explanation}>
-        You’ll level up by choosing and completing mindful eating challenges from different card decks.
-      </Text>
-
-      <TouchableOpacity
-        style={styles.continueButton}
-        onPress={handleContinue}
-      >
-        <Text style={styles.continueButtonText}>Continue</Text>
-      </TouchableOpacity>
-    </View>
+    </GradientBackground>
   );
 };
 
@@ -62,7 +65,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: SIZES.padding,
-    backgroundColor: COLORS.background,
   },
   title: {
     ...FONTS.h1,
@@ -72,14 +74,14 @@ const styles = StyleSheet.create({
   subtitle: {
     ...FONTS.h2,
     textAlign: 'center',
-    color: COLORS.secondary,
+    color: COLORS.textSecondary,
     marginBottom: SIZES.padding,
   },
   optionsContainer: {
     width: '100%',
   },
   optionButton: {
-    backgroundColor: COLORS.card,
+    backgroundColor: COLORS.surface2,
     padding: 15,
     borderRadius: SIZES.radius,
     marginBottom: SIZES.base,
@@ -92,14 +94,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   optionText: {
-    ...FONTS.body3,
-    color: COLORS.textColor,
+    ...FONTS.body2,
+    color: COLORS.text,
   },
   explanation: {
     marginTop: SIZES.padding,
     ...FONTS.body3,
     textAlign: 'center',
-    color: COLORS.secondary,
+    color: COLORS.textSecondary,
   },
   continueButton: {
     marginTop: SIZES.padding,

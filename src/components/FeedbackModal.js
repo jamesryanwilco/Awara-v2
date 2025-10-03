@@ -33,10 +33,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: 'rgba(18, 18, 18, 0.8)',
   },
   modalContent: {
-    backgroundColor: COLORS.card,
+    backgroundColor: COLORS.surface2,
     padding: SIZES.padding,
     borderRadius: SIZES.radius,
     alignItems: 'center',

@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
   },
   label: {
     ...FONTS.body3,
-    color: COLORS.secondary,
+    color: COLORS.textSecondary,
     marginBottom: SIZES.base,
   },
   bar: {
     height: 20,
-    backgroundColor: COLORS.border,
+    backgroundColor: COLORS.surface1,
     borderRadius: SIZES.radius,
     overflow: 'hidden',
   },
